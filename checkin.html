@@ -40,56 +40,49 @@
             background-color: #45a049;
         }
     </style>
+    <script>
+        function sendForm(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = {
+                name: form.name.value,
+                phone: form.phone.value
+            };
 
-<script>
-    function sendForm(event) {
-        event.preventDefault();
-    
-        const form = event.target;
-        const formData = {
-            name: form.name.value,
-            phone: form.phone.value
-        };
-    
-        fetch(form.action, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData)
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.status === "success") {
-                alert("Check-in successful!");
-                form.reset();
-            } else {
-                alert("An error occurred. Please try again.");
-            }
-        })
-        .catch(err => {
-            console.error("Error:", err);
-            alert("An error occurred. Please try again.");
-        });
-    }
+            fetch('https://script.google.com/macros/s/AKfycby6-5Hm4K2bsJBOaclAGoQ2ahJjoxPiyO7K75SSQgKRWIXuRrQ2DYnlEHuifb6y9U1S/exec', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    alert('Check-in successful!');
+                    form.reset();
+                } else {
+                    alert('An error occurred. Please try again.');
+                }
+            })
+            .catch(err => {
+                console.error('Error:', err);
+                alert('An error occurred. Please try again.');
+            });
+        }
     </script>
-    
 </head>
 <body>
-    <h1>Welcome to Grace Lutheran Church Christmas Market</h1>
-    <p>Scan the QR code or fill in your details below to check in.</p>
-
-    <!-- QR Code Placeholder -->
-    <img src="YOUR_QR_CODE_URL_HERE" alt="QR Code" style="margin-bottom: 20px;" />
+    <h1>Welcome to Grace Church</h1>
+    <p>Please fill in your details below to check in.</p>
 
     <!-- Check-In Form -->
-    <form action="https://script.google.com/macros/s/AKfycbyjSfAJIInCtHaYONjH9fSg8w5M8Ecvaofxs5eNHh5wAoHQk8QB6Q37699kbkELaKAx/exec" method="POST" enctype="application/x-www-form-urlencoded" onsubmit="return sendForm(event)">
+    <form onsubmit="sendForm(event)">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" placeholder="Your Name" required />
-    
+
         <label for="phone">Phone Number:</label>
         <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required />
-    
+
         <button type="submit">Check In</button>
     </form>
-    
 </body>
 </html>
