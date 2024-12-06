@@ -81,7 +81,7 @@
     <img src="YOUR_QR_CODE_URL_HERE" alt="QR Code" style="margin-bottom: 20px;" />
 
     <!-- Check-In Form -->
-    <form action="https://script.google.com/macros/s/AKfycbyjSfAJIInCtHaYONjH9fSg8w5M8Ecvaofxs5eNHh5wAoHQk8QB6Q37699kbkELaKAx/exec" method="POST" onsubmit="return sendForm(event)">
+    <form action="https://script.google.com/macros/s/AKfycbyjSfAJIInCtHaYONjH9fSg8w5M8Ecvaofxs5eNHh5wAoHQk8QB6Q37699kbkELaKAx/exec" method="POST" enctype="application/x-www-form-urlencoded" onsubmit="return sendForm(event)">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" placeholder="Your Name" required />
     
