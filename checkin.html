@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Church Event Check-In</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to [Church Name] Event</h1>
+    <p>Scan the QR code or fill in your details below to check in.</p>
+
+    <!-- QR Code Placeholder -->
+    <img src="YOUR_QR_CODE_URL_HERE" alt="QR Code" style="margin-bottom: 20px;" />
+
+    <!-- Check-In Form -->
+    <form action="https://your-database-endpoint-or-wix-automation" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required />
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required />
+
+        <button type="submit">Check In</button>
+    </form>
+</body>
+</html>
