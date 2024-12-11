@@ -1,0 +1,52 @@
+Instructions to Use the Script
+Create a Form File (form.html): Save the HTML form as a file in the Apps Script project. Update the action URL in your form to point to the Google Apps Script Web App URL.
+
+Deploy the Script:
+
+In the Apps Script editor, go to Deploy > New Deployment > Web App.
+Set access permissions to Anyone or Anyone with the link.
+Use the generated Web App URL for the form action.
+Test the Web App:
+
+Access the Web App URL.
+Submit the form with valid and invalid phone numbers to verify functionality.
+Monitor Execution:
+
+Open View > Execution Logs in the Apps Script editor to debug issues.
+Let me know if you need help with the deployment or integrating the form!
+
+Steps to Get the Deployment URL:
+Open the Google Apps Script Editor:
+
+Navigate to your Google Apps Script project.
+Deploy the Web App:
+
+Go to the top menu and click on Deploy.
+Select New deployment.
+Configure the Deployment:
+
+In the deployment dialog box:
+Select Web app.
+Enter a description for the deployment (e.g., "Church Check-In App").
+Set Who has access to Anyone or Anyone with the link.
+Click Deploy.
+Authorize the Script:
+
+If prompted, review and authorize the script to access your Google account data.
+Copy the Web App URL:
+
+Once deployed, you’ll see a Web app URL in the deployment summary.
+Copy this URL.
+Replace Placeholder in HTML:
+
+Paste the copied URL in your HTML form where it says 'YOUR_DEPLOYMENT_URL'.
+Testing:
+Open the deployment URL in a browser to ensure the form works.
+Test data submissions and verify the data in your Google Sheet.
+If you encounter issues, let me know for further assistance!
+
+
+
+
+
+
